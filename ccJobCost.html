@@ -1,0 +1,539 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!--
+
+ccJobCost.html 
+
+tjs 091103
+
+file version 1.06 
+
+release version 1.14
+
+-->
+<?php
+session_start();
+?>
+
+<html lang="en">
+
+  <head>
+  <link type="text/css" href="css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />	
+ <link rel="stylesheet" type="text/css" href="css/ccJobCost.css">
+
+  <link rel="stylesheet" type="text/css" href="css/ccNavAccordionTheme.css">
+
+   <script type="text/javascript" src="js/argumenturl.js"></script>
+   <script type="text/javascript" src="js/menu.js"></script>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Collogistics</title>
+    		<script type="text/javascript">
+var myRequest;
+var url;
+
+var qsParm = new Array();
+	var loginAccountNumber = -1;
+	var lastName = "collaborator";
+	var firstName = "demo";
+	
+	var isDone = false;
+	var basicPartsTable;
+	var standardPartsTable;
+	var premiumPartsTable;
+	
+	var isInfoDone = false;
+	var dataInfo = new Array();
+	var typesDataCacheInfo = new Array();
+	var customersDataCacheInfo = new Array();
+	var suppliersDataCacheInfo = new Array();
+	var partsDataCacheInfo = new Array();
+	
+	var isJobCreateMode;
+
+function qs() {
+		if (top.name) 	{
+
+			var query = top.name;
+			//alert("ccJobCost query " + query);
+			var parms = query.split('&');
+			for (var i=0; i<parms.length; i++) {
+				var pos = parms[i].indexOf('=');
+				if (pos > 0) {
+					var key = parms[i].substring(0,pos);
+					var val = parms[i].substring(pos+1);
+					qsParm[key] = val;
+				}
+			}
+			loginAccountNumber = qsParm['account'];
+			lastName = qsParm['last'];
+			firstName = qsParm['first'];
+		}
+	//alert("ccJobCost account " + loginAccountNumber + " last name " + lastName + " first name " + firstName);
+} 
+
+</script>
+
+  </head>
+
+  <body>
+
+<h1>Collogistics Organization</h1>
+
+<hr/>  Contractors' Collaborative Logistics Management Organization <hr/>
+
+
+
+<div id="container">
+
+<!-- START NAV -->
+
+	<div id="navCol">
+
+		<ul id="navAccordion">
+
+			<li>
+
+				<a class="heading" href="#logistics" title="Logistics">Contractor Logistics Management</a>
+
+				<div>
+
+					<a href="javascript:newLocation('ccJobCost', 'logistics')" title="JobCost">Job Cost Estimation</a>
+					<a href="javascript:newLocation('ccJobSchedule', 'logistics')" title="JobSchedule">Job Scheduling</a>
+
+					<a href="javascript:newLocation('ccAccounting', 'logistics')" title="ContractorAccounting">Contractor Accounting</a>
+
+				</div>
+
+			</li>
+
+
+			<li>
+
+				<a class="heading" href="#collaborators" title="CollaborativeManagement">Collaborative Logistics Management</a>
+
+				<div>
+
+					<a href="javascript:newLocation('ccMarketing', 'collaborators')" title="Marketing">Marketing</a>
+
+					<a href="javascript:newLocation('ccSourcing', 'collaborators')" title="Sourcing">Sourcing</a>
+
+					<a href="javascript:newLocation('ccWarehousing', 'collaborators')" title="Warehousing">Warehousing</a> 
+
+					<a href="javascript:newLocation('ccDisposal', 'collaborators')" title="Disposal">Disposal</a> 
+
+				</div>
+
+			</li>
+
+			<li>
+
+				<a class="heading" href="#collogistics" title="WhoWeAre">Who We Are</a>
+
+				<div>
+
+					<a href="javascript:newLocation('ccMission', 'collogistics')" title="Mission">Mission</a>
+
+					<a href="javascript:newLocation('ccResume', 'collogistics')" title="KnowledgeBase">Knowledge Base</a>
+
+					<a href="javascript:newLocation('ccContact', 'collogistics')" title="Contact">Contact</a> 
+
+				</div>
+
+			</li>
+
+		</ul>
+
+	</div>
+
+<!-- END NAV -->
+
+
+	<div id="contentCol">
+	<div id="tabs">
+
+	    <ul>
+
+		<li><a href="#tabs-1">Jobs</a></li>
+
+		<li><a href="#tabs-2">Parts</a></li>
+		<li><a href="#tabs-3">Suppliers</a></li>
+
+		<li><a href="#tabs-4">Customers</a></li>
+		<li><a href="#tabs-5">Types</a></li>
+
+		<li><a href="#tabs-6">Options</a></li>
+
+	    </ul>
+
+	    <div id="tabs-1">
+
+	    <br/>
+
+<div id="jobList">
+</div>
+<div class="iconControls">
+
+<a href="javascript:newLocation('ccIndex', 'logistics')"><img src="images/home.gif"></a>
+
+</div>
+</div>
+
+	    <div id="tabs-2">
+	    <br/>
+
+
+<div id="partList">
+</div>
+<div class="iconControls">
+
+<a href="javascript:newLocation('ccIndex', 'logistics')"><img src="images/home.gif"></a>
+
+</div>
+</div>
+
+	    <div id="tabs-3">
+	    <br/>
+<div id="supplierList">
+</div>
+	    
+<div class="iconControls">
+
+<a href="javascript:newLocation('ccIndex', 'logistics')"><img src="images/home.gif"></a>
+
+</div>
+</div>
+
+	    <div id="tabs-4">
+	    <br/>
+
+<div id="customerList">
+</div>
+<div class="iconControls">
+
+<a href="javascript:newLocation('ccIndex', 'logistics')"><img src="images/home.gif"></a>
+
+</div>
+</div>
+
+	    <div id="tabs-5">
+	    <br/>
+<div id="typeList">
+</div>
+<div class="iconControls">
+
+<a href="javascript:newLocation('ccIndex', 'logistics')"><img src="images/home.gif"></a>
+
+</div>
+</div>
+
+	    <div id="tabs-6">
+	    <br/>
+<div id="optionList">
+</div>
+<div class="iconControls">
+
+<a href="javascript:newLocation('ccIndex', 'logistics')"><img src="images/home.gif"></a>
+
+</div>
+</div>
+
+	<!-- end div tabs -->
+
+	</div>
+
+
+
+	<!-- end div contentCol -->
+
+
+</div>
+
+			<div id="clear"></div>
+
+		</div>
+		
+<!-- add/edit customer dialog -->
+<div id="customerDialog">
+	<div id="customerDialogMsg" style="display: none;">
+	Really Delete? <br/>
+	</div>
+	<form name="customerForm">
+		<input type="hidden" name="id" />
+		<input type="hidden" name="remove" />
+		<table><tbody>
+		<tr>
+		<td>Firstname: <input type="text" name="firstname" /></td>
+		</tr>
+		<tr>
+		<td>Lastname: <input type="text" name="lastname" /></td>
+		</tr>
+		</tbody></table>
+		<button type="button" onclick="processForm(4)">Submit</button>
+	</form>
+</div>
+
+<!-- add/edit type dialog -->
+<div id="typeDialog">
+	<div id="typeDialogMsg" style="display: none;">
+	Really Delete? <br/>
+	</div>
+	<form name="typeForm">
+		<input type="hidden" name="id" />
+		<input type="hidden" name="remove" />
+		<table><tbody>
+		<tr>
+		<td>Name: <input type="text" name="name" /></td>
+		</tr>
+		<tr>
+		<td>Description: <input type="text" name="description" /></td>
+		</tr>
+		</tbody></table>
+		<button type="button" onclick="processForm(5)">Submit</button>
+	</form>
+</div>
+
+<!-- add/edit option dialog -->
+<div id="optionDialog">
+	<div id="optionDialogMsg" style="display: none;">
+	Really Delete? <br/>
+	</div>
+	<form name="optionForm">
+		<input type="hidden" name="id" />
+		<input type="hidden" name="remove" />
+		<table><tbody>
+		<tr>
+		<td>Name: <input type="text" name="name" /></td>
+		</tr>
+		<tr>
+		<td>Description: <input type="text" name="description" /></td>
+		</tr>
+		</tbody></table>
+		<button type="button" onclick="processForm(6)">Submit</button>
+	</form>
+</div>
+
+<!-- add/edit supplier dialog -->
+<div id="supplierDialog">
+	<div id="supplierDialogMsg" style="display: none;">
+	Really Delete? <br/>
+	</div>
+	<form name="supplierForm">
+		<input type="hidden" name="id" />
+		<input type="hidden" name="remove" />
+		<table><tbody>
+		<tr>
+		<td>Name:&nbsp;<input type="text" name="name" /></td>
+		<td>Phone:&nbsp;<input type="text" name="phone" /></td>
+		</tr>
+		<tr>
+		<td colspan="2">URL:&nbsp;<input type="text" name="url" /></td>
+		</tr>
+		<tr>
+		<td>Contact First Name:&nbsp;<input type="text" name="firstname" /></td>
+		<td>Contact Last Name:&nbsp;<input type="text" name="lastname" /></td>
+		</tr>
+		</tbody></table>
+		<button type="button" onclick="processForm(3)">Submit</button>
+	</form>
+</div>
+
+<!-- add/edit part dialog -->
+<div id="partDialog">
+	<div id="partDialogMsg" style="display: none;">
+	Really Delete? <br/>
+	</div>
+	<form name="partForm">
+		<input type="hidden" name="id" />
+		<input type="hidden" name="remove" />
+		<table><tbody>
+		<tr>
+		<td>Name:&nbsp;<input type="text" name="name" /></td>
+		<td>Supplier:&nbsp;<select name="supplier" /></td>
+		</tr>
+		<tr>
+		<td>SKU:&nbsp;<input type="text" name="sku" /></td>
+		<td>Attributes:&nbsp;<input type="text" name="attributes" /></td>
+		</tr>
+		<tr>
+		<td>Description:&nbsp;<input type="text" name="description" /></td>
+		<td>Cost:&nbsp;<input type="text" name="cost" /></td>
+		</tr>
+		</tbody></table>
+		<button type="button" onclick="processForm(2)">Submit</button>
+	</form>
+</div>
+
+<!-- add/edit job dialog -->
+<div id="jobDialog">
+		<div id="jobTabs">
+		    <ul>
+			<li><a href="#jobTabs-1">Job</a></li>
+			<li><a href="#jobTabs-2">Basic</a></li>
+			<li><a href="#jobTabs-3">Standard</a></li>
+			<li><a href="#jobTabs-4">Premium</a></li>
+		    </ul>
+	
+		    <div id="jobTabs-1">
+			<br/>
+			<div id="jobDialogMsg" style="display: none;">
+			Really Delete? <br/>
+			</div>
+			<form name="jobForm">
+				<input type="hidden" name="id" />
+				<input type="hidden" name="remove" />
+				<table><tbody>
+				<tr>
+				<td>Type:&nbsp;<select name="type" /></td>
+				<td>Customer:&nbsp;<select name="customer" /></td>
+				</tr>
+				<tr>
+				<td colspan="2">Description:&nbsp;<input type="text" name="description" /></td>
+				</tr>
+				</tbody></table>
+				<!-- button id="jobSubmit" type="button" onclick="processForm(1)" disabled="disabled">Submit</button -->
+				<button id="jobCreate" type="button" onclick="processForm(0)" disabled="disabled">Clone</button>
+				&nbsp;
+				<button id="jobSubmit" type="button" onclick="processForm(1)" disabled="disabled">Submit</button>
+			</form>
+		    </div>
+		    <div id="jobTabs-2">
+	    <br/>
+			<div id="basicPartsList">
+			</div>
+	    <br/>
+			<div id="basicPickList">
+</div>
+		    </div>
+		    <div id="jobTabs-3">
+	    <br/>
+			<div id="standardPartsList">
+			</div>
+	    <br/>
+			<div id="standardPickList">
+</div>
+		    </div>
+		    <div id="jobTabs-4">
+	    <br/>
+			<div id="premiumPartsList">
+			</div>
+	    <br/>
+			<div id="premiumPickList">
+</div>
+		    </div>
+		</div>    
+</div>
+
+		<script type="text/javascript" src="jquery-1.3.2.js"></script>
+
+   <script type="text/javascript" src="ui.core.js"></script>
+
+    <script type="text/javascript" src="ui.accordion.js"></script>
+
+    <script type="text/javascript" src="effects.core.js"></script>
+
+    <script type="text/javascript" src="effects.transfer.js"></script>
+
+    <script type="text/javascript" src="js/effects.highlight.js"></script>
+    	<script type="text/javascript" src="js/ui.tabs.js"></script>
+     <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+   <script type="text/javascript" src="js/ccJobCost.js"></script>
+	<script type="text/javascript" src="ui.resizable.js"></script>
+	<script type="text/javascript" src="ui.dialog.js"></script>
+
+    <script type="text/javascript">
+
+	  //function to execute when doc ready
+
+	  $(function() {
+
+	  	    qs();
+		   var url;
+		   
+		   var customerDialogOpts = {
+			title: "Customers",
+			width: "600px",
+			autoOpen: false
+			}
+
+	//create the customer dialog
+		$("#customerDialog").dialog(customerDialogOpts);
+
+		var typeDialogOpts = {
+			title: "Types",
+			width: "600px",
+			autoOpen: false
+			}
+
+	//create the type dialog
+		$("#typeDialog").dialog(typeDialogOpts);
+		
+		var optionDialogOpts = {
+			title: "Options",
+			width: "600px",
+			autoOpen: false
+			}
+
+	//create the option dialog
+		$("#optionDialog").dialog(optionDialogOpts);
+
+		var supplierDialogOpts = {
+			title: "Suppliers",
+			width: "600px",
+			autoOpen: false
+			}
+
+	//create the supplier dialog
+		$("#supplierDialog").dialog(supplierDialogOpts);
+
+		var partDialogOpts = {
+			title: "Parts",
+			width: "600px",
+			autoOpen: false
+			}
+
+	//create the part dialog
+		$("#partDialog").dialog(partDialogOpts);
+
+		var jobDialogOpts = {
+			title: "Jobs",
+			//width: "600px",
+			width: "800px",
+			ressizable: true,
+			autoOpen: false
+			}
+
+	//create the job dialog
+		$("#jobDialog").dialog(jobDialogOpts);
+
+		   
+			//turn specified element into an accordion
+
+	    $("#navAccordion").accordion({
+
+				header: ".heading",
+
+				//event: "mouseover",
+
+				autoHeight: false,
+
+				alwaysOpen: false,
+
+				//active:false,
+
+				navigation: true  
+
+			});
+			
+			refreshAll(0);
+			//awaitAjaxProcess(true);
+											setAuthenticated();
+
+	  });
+
+	</script>
+
+  </body>
+
+</html>
+

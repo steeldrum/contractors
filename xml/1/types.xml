@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<types>
+<type id="1">
+<name>
+bathroom
+</name>
+</type>
+<type id="2">
+<name>
+furnace
+</name>
+</type>
+<type id="3">
+<name>
+kitchen
+</name>
+</type>
+</types>

@@ -1,0 +1,425 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!--------------------------------------
+$Revision:: 157                        $: Revision of last commit
+$LastChangedBy::                       $: Author of last commit
+$LastChangedDate:: 2011-11-29 08:10:18#$: Date of last commit
+--------------------------------------->
+<!--
+contractors/
+ccIndex.html 
+
+tjs 091103
+
+file version 1.06
+
+release version 1.12
+
+-->
+<?php
+session_start();
+?>
+
+<html lang="en">
+
+  <head>
+<!--link rel="shortcut icon" href="../favicon.ico" /-->
+  <!-- link rel="stylesheet" type="text/css" href="ui.core.css">
+  <link rel="stylesheet" type="text/css" href="ui.resizable.css" -->
+  <!-- link rel="icon" type="image/x-icon" href="favicon.ico">
+   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" -->
+ <link type="text/css" href="css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />	
+
+   <link rel="stylesheet" type="text/css" href="css/ccNavAccordionTheme.css">
+  <link rel="stylesheet" type="text/css" href="css/ccIndex.css">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Contractors' Collaborative</title>
+		<script type="text/javascript" src="jquery-1.3.2.js"></script>
+
+    <script type="text/javascript" src="ui.core.js"></script>
+
+    <script type="text/javascript" src="ui.accordion.js"></script>
+
+    <script type="text/javascript" src="effects.core.js"></script>
+
+    <script type="text/javascript" src="js/effects.highlight.js"></script>
+	<script type="text/javascript" src="ui.dialog.js"></script>
+   <script type="text/javascript" src="js/argumenturl.js"></script>
+   <script type="text/javascript" src="js/menu.js"></script>
+   <script type="text/javascript" src="js/ccIndex.js"></script>
+		<script type="text/javascript">
+
+	//global for keeping track of stepped view
+
+	//var currentStepView = 0;
+	var loginAccountNumber = 0;
+	var lastName = "collaborator";
+	var firstName = "demo";
+//getLogin();
+function processArgs() {
+	setAuthenticated();
+	//alert("index.html processArgs authenticated " + authenticated);
+	var elm;
+	//var elm2;
+	if (authenticated != null && authenticated == 'true') {
+		//alert("index.html processArgs disable login, enable logout");
+		//$('#login').disabled="disabled";
+		//$('#logout').disabled="";	
+		elm = $('#login').get(0);
+		if (elm) {
+			elm.disabled="disabled";
+			//elm2 = $('#scheduleDisplayAd').get(0);
+			//if (elm2)
+			//	elm2.disabled="";
+		}
+		elm = $('#logout').get(0);
+		if (elm) {
+			elm.disabled="";
+		}
+	} else {
+		//alert("index.html processArgs disable logout, enable login");
+		//$('#logout').disabled="disabled";
+		//$('#login').disabled="";	
+		elm = $('#logout').get(0);
+		if (elm) {
+			elm.disabled="disabled";
+			//elm2 = $('#scheduleDisplayAd').get(0);
+			//if (elm2)
+			//	elm2.disabled="disabled";
+		}
+		elm = $('#login').get(0);
+		if (elm) {
+			elm.disabled="";
+		}
+	}
+	//enableOrDisableScheduledDisplayAds();
+}
+
+function doLogin() {
+	window.location.href = "login.php";
+}
+
+function doLogout() {
+	window.location.href = "logout.php";
+}
+
+	function fnSubmit()
+	{
+		//top.name= "account=" + loginAccountNumber;
+		top.name= "account=" + loginAccountNumber + "&last=" + lastName + "&first=" + firstName;
+		self.location='ccJobCost.html';
+	}
+
+//alert("ccIndex header jQuery function");
+/*
+
+	$(function() {
+
+
+
+			//define dialog config object
+
+			var loginDialogOpts = {
+
+			title: "Login",
+
+			//buttons: { "Close": function() { $(this).dialog("close"); } },
+
+			//model: true,
+
+			////overlay: { background: "url(modal.png) repeat"
+
+			//},
+
+			width: "600px",
+
+			//height: "600px",
+
+			//dialogClass: 'alert',
+
+			autoOpen: false
+
+			}
+
+
+
+	//create the dialog
+
+		$("#loginDialog").dialog(loginDialogOpts);
+		
+
+					//define click handler for attending scrum meeting
+
+		$("#openLoginDialog").click(function() {
+
+			//open the dialog
+
+			$("#loginDialog").dialog("open");
+
+					//create slider bar
+
+		});
+		
+		$("#login").click(function() {
+
+		var elm = document.getElementById('email');
+		if (elm) {
+			var email = elm.value;
+			elm = document.getElementById('password');
+			var password = elm.value;
+			//alert("email " + email + " password " + password);
+			$.get('xml/collaborators.xml', function(data) {
+				$(data).find('collaborator').each(function() {
+					var $collaborator = $(this);
+					var collaboratorId = $collaborator.attr('id');
+					var children = $collaborator.children();
+					var last = children[0].firstChild.nodeValue;
+					var first = children[1].firstChild.nodeValue;
+					var collaboratorEmail = children[2].firstChild.nodeValue;
+					var collaboratorPassword = children[3].firstChild.nodeValue;
+					var re = / /g;
+					collaboratorEmail = collaboratorEmail.replace(re, "");
+					collaboratorPassword = collaboratorPassword.replace(re, "");
+					re = /\n/g;
+					collaboratorEmail = collaboratorEmail.replace(re, "");
+					collaboratorPassword = collaboratorPassword.replace(re, "");
+					//alert("email <" + email + "> password <" + password + "> last name " + last + " first name " + first + " collaboratorEmail <" + collaboratorEmail + "> collaboratorPassword <" + collaboratorPassword + ">");
+					if (collaboratorEmail == email && collaboratorPassword == password) {
+						loginAccountNumber = collaboratorId;
+						//alert("email " + email + " password " + password + " last name " + last + " first name " + first + " account # " + loginAccountNumber);
+						lastName = last;
+						firstName = first;
+						login(loginAccountNumber, lastName, firstName);
+						//$('#logout').disabled = "";
+						elm = document.getElementById('logout');
+						elm.disabled="";
+					}
+				}); //each
+			    }); //get
+			}
+		
+			//close the dialog
+			$("#loginDialog").dialog("close");
+			//login(loginAccountNumber, lastName, firstName);
+			//alert("loginAccountNumber " + loginAccountNumber + " last " + lastName);
+		    });
+
+		$("#logout").click(function() {
+			logout();
+			//this.disabled="disabled";
+			//$("#logout").disabled="disabled";
+						var elm = document.getElementById('logout');
+						elm.disabled="disabled";
+			
+		    });	
+		    
+		    getLogin();
+		    
+		});
+		*/
+		</script>
+  </head>
+
+  <body>
+
+  <!--[if !IE]> <!-->
+
+  <object data="collogistics.svg" type="image/svg+xml"
+
+        width="400" height="100">
+
+    <embed src="collogistics.svg" type="image/svg+xml"
+
+            width="400" height="100" />
+
+</object>
+
+<!--<![endif]-->
+
+
+
+<h1>Collogistics Organization</h1>
+
+<hr/>  Contractors' Collaborative Logistics Management Organization <hr/>
+
+
+
+<div id="container">
+
+<!-- START NAV -->
+
+	<div id="navCol">
+
+		<ul id="navAccordion">
+
+			<li>
+
+				<a class="heading" href="#logistics" title="Logistics">Contractor Logistics Management</a>
+
+				<div>
+
+					<a href="javascript:newLocation('ccJobCost', 'logistics')" title="JobCost">Job Cost Estimation</a>
+					<a href="javascript:newLocation('ccJobSchedule', 'logistics')" title="JobSchedule">Job Scheduling</a>
+
+					<a href="javascript:newLocation('ccAccounting', 'logistics')" title="ContractorAccounting">Contractor Accounting</a>
+
+				</div>
+
+			</li>
+
+
+			<li>
+
+				<a class="heading" href="#collaborators" title="CollaborativeManagement">Collaborative Logistics Management</a>
+
+				<div>
+
+					<a href="javascript:newLocation('ccMarketing', 'collaborators')" title="Marketing">Marketing</a>
+
+					<a href="javascript:newLocation('ccSourcing', 'collaborators')" title="Sourcing">Sourcing</a>
+
+					<a href="javascript:newLocation('ccWarehousing', 'collaborators')" title="Warehousing">Warehousing</a> 
+
+					<a href="javascript:newLocation('ccDisposal', 'collaborators')" title="Disposal">Disposal</a> 
+
+				</div>
+
+			</li>
+
+			<li>
+
+				<a class="heading" href="#collogistics" title="WhoWeAre">Who We Are</a>
+
+				<div>
+
+					<a href="javascript:newLocation('ccMission', 'collogistics')" title="Mission">Mission</a>
+
+					<a href="javascript:newLocation('ccResume', 'collogistics')" title="KnowledgeBase">Knowledge Base</a>
+
+					<a href="javascript:newLocation('ccContact', 'collogistics')" title="Contact">Contact</a> 
+
+				</div>
+
+			</li>
+
+		</ul>
+
+	</div>
+
+<!-- END NAV -->
+
+	<div id="contentCol">
+
+		<h1>Contractors' Collaborative management of Logistics</h1>
+
+  <table>
+
+  <tr>
+
+  <td>
+
+<p>Collogistics organization provides a capable <span class="akey">repository of contractors</span> who
+
+besides being <span class="akey">state licensed and insured</span> also adhere to high <span class="akey">standards of ethics</span>,
+promote <span class="akey">energy conservation</span>, and abide by <span class="akey">professional guidelines</span> as members in
+good standing of Collogistics.  
+</p>
+</td><td>
+<p>When contractors are members of Collogistics
+they are able to <span class="akey">pass along savings</span> to people who use the contractors' services.
+Reasons for this are rooted in the principal of "Collaborative management of Logistics".
+What this translates to is pooled buying power, pooled staging of materials
+required to render services, properly (and pooled) disposal of material and,
+to some extent, pooled administration talent based upon Internet technology.
+</p> 
+
+</td>
+
+  </tr>
+
+<tr><td></td><td></td></tr>
+
+<tr><td><h1>Contractors overcome logistical hurdles...</h1></td><td><h1>as collaborative members</h1></td></tr>
+
+<tr><td><img src="images/jumpHurdle2w.jpg" /></td><td><img src="images/collaborators2w.jpg" /></td></tr>
+
+  </table>
+<!-- button id="openLoginDialog">Login</button>&nbsp;<button id="logout" disabled="disabled">Logout</button -->
+<button id="login" onclick="doLogin();">Login</button>&nbsp;&nbsp;<button id="logout" onclick="doLogout();">Logout</button>
+
+  <br/>
+
+  <div class="iconControls">
+
+  <p>Hosted for incubation by: <a href="../index.html"><img src="images/favicon.ico"></a>&nbsp;&nbsp;Use <button id="key"><img src="images/key.gif" /></button> to highlight key "take-away" pointers.</p>
+
+  </div>
+
+  </div>
+
+			<div id="clear"></div>
+
+		</div>
+
+<!-- div id="loginDialog">
+
+<hr/>
+Enter your email account: <input type="text" id="email">
+<br/>
+Enter your password: <input type="password" id="password">
+<br/>
+<button id="login">Login</button>
+</div -->
+
+
+    <script type="text/javascript">
+
+	  //function to execute when doc ready
+
+	  $(function() {
+
+	  	    
+
+			//turn specified element into an accordion
+
+	    $("#navAccordion").accordion({
+
+				header: ".heading",
+
+				//event: "mouseover",
+
+				autoHeight: false,
+
+				alwaysOpen: false,
+
+				//active:false,
+
+				navigation: true  
+
+			});
+
+			
+
+			//for highlights of key take-away pointers
+
+		$("#key").click(function() {
+
+					//highlight specified element
+
+					//$('.akey').effect("highlight");
+
+					$('.akey').effect("highlight", {}, 20000);
+
+				});
+
+				processArgs();
+
+	  });
+
+	</script>
+
+  </body>
+
+</html>
+

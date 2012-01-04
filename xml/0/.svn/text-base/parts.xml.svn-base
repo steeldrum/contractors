@@ -1,0 +1,1 @@
+<?xml version="1.0" ?><parts><part id="1"><name>DHW tank</name><supplier id="2"><sku>DHW109</sku><attributes>white</attributes><description>40 gal gas</description><cost>109</cost></supplier></part><part id="2"><name>boiler</name><supplier id="2"><sku>B110</sku><attributes>black</attributes><description>85% efficient</description><cost>2010</cost></supplier></part></parts>

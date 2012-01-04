@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<account id="1">
+<last>
+Doe
+</last>
+<first>
+John
+</first>
+<name>
+Doe, Son and Daughter Construction
+</name>
+<tagline>
+Hire The Three HouseKiTeers For All House Repairs!
+</tagline>
+<street1>
+444 Loverly Lane
+</street1>
+<city>
+Lynn
+</city>
+<state>
+MA
+</state>
+<zip>
+01905
+</zip>
+<phones>
+<phone type="main">
+1-800-555-1212
+</phone>
+<phone type="mobile">
+1-800-444-1212
+</phone>
+</phones>
+<emails>
+<email>
+doeConstruction@AOL.com
+</email>
+</emails>
+<url>
+</url>
+<policies>
+<policy type="credentials">
+<bullet>
+Fully insured throughout New England
+</bullet>
+<bullet>
+License #123456
+</bullet>
+<bullet>
+Member: Contractors' Collaborative Logistics Management Organization (www.collogistics.org)
+</bullet>
+<bullet>
+When contacted we can provide referrals from satisfied customers.
+</bullet>
+</policy>
+<policy type="terms">
+<bullet>
+Free estimates throughout New England
+</bullet>
+<bullet>
+Quotations for jobs are made in good faith based upon customers' requirements.
+The amounts cited are subject to change after 30 days. Changes could occur 
+if requirements are changed and/or unexpected, unforeseen problems arise
+during construction.
+</bullet>
+<bullet>
+Please contact us if there are any questions about this proposal or to setup
+a schedule when work can begin.
+</bullet>
+<bullet>
+We use quality material that comes with manufacturers' warantees.  In addition
+our standard quality assurance workmanship warantee is for 1 year.
+</bullet>
+<bullet>
+We cannot discuss specific job schedules until we plan a meeting to accept
+this proposal.  In general our payment policy is to receive one third
+payment upon proposal and schedule acceptance, one third payment when the
+construction is half completed, and one third payment within thirty days
+of job's completion and customer acceptance.
+</bullet>
+</policy>
+</policies>
+</account>

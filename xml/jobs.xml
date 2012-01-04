@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<jobs>
+<job id="1" customerId="1" typeId="1">
+<description>
+renovate bathroom in cellar
+</description>
+<options>
+<option id="1">
+<parts>
+<part id="1"/>
+<part id="2"/>
+<part id="6"/>
+</parts>
+</option>
+</options>
+</job>
+<job id="2" customerId="1" typeId="3">
+<description>
+install vent in kitchen
+</description>
+<options>
+<option id="1">
+<parts>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+</parts>
+</option>
+</options>
+</job>
+<job id="3" customerId="1" typeId="2">
+<description>
+replace old boiler and hot water heater
+</description>
+<options>
+<option id="1">
+<parts>
+<part id="9"/>
+<part id="10"/>
+<part id="6"/>
+</parts>
+</option>
+<option id="3">
+<parts>
+<part id="7"/>
+<part id="8"/>
+<part id="6"/>
+</parts>
+</option>
+</options>
+</job>
+</jobs>

@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<parts>
+<part id="1">
+<name>
+toilet
+</name>
+<cost>
+101
+</cost>
+</part>
+<part id="2">
+<name>
+sink
+</name>
+<cost>
+102
+</cost>
+</part>
+<part id="3">
+<name>
+shower
+</name>
+<cost>
+103
+</cost>
+</part>
+<part id="4">
+<name>
+vent w light
+</name>
+<cost>
+104
+</cost>
+</part>
+<part id="5">
+<name>
+SS chimney
+</name>
+<cost>
+105
+</cost>
+</part>
+<part id="6">
+<name>
+labor
+</name>
+<cost>
+106
+</cost>
+</part>
+<part id="7">
+<name>
+knight boiler
+</name>
+<cost>
+107
+</cost>
+</part>
+<part id="8">
+<name>
+superStoreDHWtank
+</name>
+<cost>
+108
+</cost>
+</part>
+<part id="9">
+<name>
+40GalGasDHWtank
+</name>
+<cost>
+109
+</cost>
+</part>
+<part id="10">
+<name>
+ten85%Boiler
+</name>
+<cost>
+110
+</cost>
+</part>
+</parts>

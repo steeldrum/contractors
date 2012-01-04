@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<customers>
+<customer id="1">
+<last>
+soucy
+</last>
+<first>
+tom
+</first>
+</customer>
+<customer id="2">
+<last>
+dobbins
+</last>
+<first>
+tom
+</first>
+</customer>
+</customers>

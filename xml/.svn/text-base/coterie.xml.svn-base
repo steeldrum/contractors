@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!-- 
+coterie.xml
+tjs 091216
+
+file version 1.00 
+
+release version 1.05
+
+A coterie is an exclusive group.  The closeness of relationships are
+established via links within the group.  The membership consists mainly
+of person elements.  But entity elements (e.g. a company where a person
+works or a company that the person uses services) are included as well.
+A person element or an entity element MUST HAVE A UNIQUE id="nnn" attribute.
+Also they MUST have a name="" (the first name if person).
+Optionally they may have a url="". If a person they MUST have
+a surname="" attribute for the last name.  By reviewing data (below) the
+child elements for both person and entity can have specific data such
+as phone numbers, address information, etc. -->
+<coterie>
+<person id="1" surname="Soucy" name="Tom">
+<emails>
+<email>tandmsoucy@verizon.net</email>
+</emails>
+<phones>
+<phone type="home">(781) 599-8014</phone>
+<phone type="mobile">(781) 608-6840</phone>
+</phones>
+<address city="Lynn" state="MA" zip="01904">
+<street>
+3 Harris Rd.
+</street>
+</address>
+<links>
+<link type="spouse" refId="3" />
+<link type="proprietor" refId="2" />
+</links>
+</person>
+<entity id="2" name="Collogistics">
+<emails>
+<email>support@collogistics.com</email>
+</emails>
+<phones>
+<phone type="home">(781) 599-8014</phone>
+<phone type="mobile">(781) 608-6840</phone>
+</phones>
+<address city="Lynn" state="MA" zip="01904">
+<street>
+3 Harris Rd.
+</street>
+</address>
+<links>
+<link type="employer" refId="1" />
+</links>
+</entity>
+<person id="3" surname="Soucy" name="Marsha">
+<emails>
+<email>tandmsoucy@verizon.net</email>
+</emails>
+<phones>
+<phone type="home">(781) 599-8014</phone>
+<phone type="mobile">(781) 608-6840</phone>
+</phones>
+<address city="Lynn" state="MA" zip="01904">
+<street>
+3 Harris Rd.
+</street>
+</address>
+<links>
+<link type="spouse" refId="1" />
+</links>
+</person>
+</coterie>

@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<!--
+
+ccWarehousing.html 
+
+tjs 091208
+
+file version 1.01 
+
+release version 1.02
+
+-->
+
+<html lang="en">
+
+  <head>
+
+  <link type="text/css" href="css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" />	
+  <!-- link rel="stylesheet" type="text/css" href="navAccordionTheme.css" -->
+  <link rel="stylesheet" type="text/css" href="css/ccNavAccordionTheme.css">
+
+   <script type="text/javascript" src="js/argumenturl.js"></script>
+   <script type="text/javascript" src="js/menu.js"></script>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Collogistics</title>
+
+  </head>
+
+  <body>
+
+<h1>Collogistics</h1>
+
+<hr/>  Where Collaborators manage Logistics <hr/>
+
+<div id="container">
+
+<!-- START NAV -->
+
+	<div id="navCol">
+
+		<ul id="navAccordion">
+
+			<li>
+
+				<a class="heading" href="#logistics" title="Logistics">Contractor Logistics Management</a>
+
+				<div>
+
+					<a href="javascript:newLocation('ccJobCost', 'logistics')" title="JobCost">Job Cost Estimation</a>
+					<a href="javascript:newLocation('ccJobSchedule', 'logistics')" title="JobSchedule">Job Scheduling</a>
+
+					<a href="javascript:newLocation('ccAccounting', 'logistics')" title="ContractorAccounting">Contractor Accounting</a>
+
+				</div>
+
+			</li>
+
+
+			<li>
+
+				<a class="heading" href="#collaborators" title="CollaborativeManagement">Collaborative Logistics Management</a>
+
+				<div>
+
+					<a href="javascript:newLocation('ccMarketing', 'collaborators')" title="Marketing">Marketing</a>
+
+					<a href="javascript:newLocation('ccSourcing', 'collaborators')" title="Sourcing">Sourcing</a>
+
+					<a href="javascript:newLocation('ccWarehousing', 'collaborators')" title="Warehousing">Warehousing</a> 
+
+					<a href="javascript:newLocation('ccDisposal', 'collaborators')" title="Disposal">Disposal</a> 
+
+				</div>
+
+			</li>
+
+			<li>
+
+				<a class="heading" href="#collogistics" title="WhoWeAre">Who We Are</a>
+
+				<div>
+
+					<a href="javascript:newLocation('ccMission', 'collogistics')" title="Mission">Mission</a>
+
+					<a href="javascript:newLocation('ccResume', 'collogistics')" title="KnowledgeBase">Knowledge Base</a>
+
+					<a href="javascript:newLocation('ccContact', 'collogistics')" title="Contact">Contact</a> 
+
+				</div>
+
+			</li>
+
+		</ul>
+
+	</div>
+
+<!-- END NAV -->
+
+	<div id="contentCol">
+
+<h1>Member Candidate Notice</h1>
+
+
+<p>  Qualifying contractors who request our Job Cost Quote Service Module
+(see <a href="ccContact.html#collogistics" title="Contact">Contact</a> to
+email in your request) can use the <span class="akey">Job Cost Module FREE OF CHARGE</span>.  Once accepted,
+you will be given an account to log into and then you can use Job Costing to generate your quotes.</p>
+
+<p> The Collogistics Warehousing Module is available to contractors that have
+used the Job Cost Module and desire to participate in cutting costs by means of
+the <span class="akey">Collaborative Parts Storage Model</span>.  This is especially valuable for
+smaller contractors who want to gain price advantage via pooled warehouse costs.
+<span class="akey">The Warehousing Module is for member Contractor Collaborators only.</span>
+Any contractor that uses the free Job Cost Module can apply to become a
+<span class="akey">Contractor Collaborator</span> (using the same email request mechanism).  If membership
+is approved and the nominal membership fee is paid, the Warehousing Module
+is available for usage as long as the license fee is maintained.
+
+</p>
+
+<p>  Why is the Job Cost Quote Service Module offerred for free while the
+remainder of modules, such as Warehousing, require a license? The simple answer
+to this question is merely based on typical revenue streams.  Most of our
+Contractor Collaborators offer free estimates.  Any time and effort spent
+conjuring up <span class="akey">quotes risks no profit and no return</span> (provided the customer
+chooses another competing contractor).  Our Job Cost service can even <span class="akey">be used
+"on site"</span> with properly equipted laptop or PDAs.  We minimize the time and effort
+required for quotation handling.  This, in turn saves you money.  Once a customer
+accepts your quotation you have a new revenue stream and a trivial fraction
+of that revenue is used to maintain your annual license for the
+remainder of the Collogistics modules.  These modules also tend to <span class="akey">pay for
+themselves</span> in terms of productivity and other benefits.
+</p>
+
+<br/>
+
+<div class="iconControls">
+
+<a href="javascript:newLocation('ccIndex', 'collaborators')"><img src="images/home.gif"></a>&nbsp;&nbsp;<button id="key"><img src="images/key.gif" /></button>
+
+</div>
+
+			</div>
+
+			<div id="clear"></div>
+
+		</div>
+
+		<script type="text/javascript" src="jquery-1.3.2.js"></script>
+
+   <script type="text/javascript" src="ui.core.js"></script>
+
+    <script type="text/javascript" src="ui.accordion.js"></script>
+
+    <script type="text/javascript" src="effects.core.js"></script>
+
+    <script type="text/javascript" src="js/effects.highlight.js"></script>
+
+    <script type="text/javascript">
+
+	  //function to execute when doc ready
+
+	  $(function() {
+
+	  	    
+
+			//turn specified element into an accordion
+
+	    $("#navAccordion").accordion({
+
+				header: ".heading",
+
+				//event: "mouseover",
+
+				autoHeight: false,
+
+				alwaysOpen: false,
+
+				//active:false,
+
+				navigation: true  
+
+			});
+
+			
+
+			//for highlights of key take-away pointers
+
+		$("#key").click(function() {
+
+					//highlight specified element
+
+					//$('.akey').effect("highlight");
+
+					$('.akey').effect("highlight", {}, 20000);
+
+				});
+															setAuthenticated();
+
+
+	  });
+
+	</script>
+
+  </body>
+
+</html>
+

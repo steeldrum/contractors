@@ -1,0 +1,1769 @@
+<?xml version="1.0"?>
+<!-- 
+coterie.xml
+tjs 091216
+
+file version 1.00 
+
+release version 1.05
+
+A coterie is an exclusive group.  The closeness of relationships are
+established via links within the group.  The membership consists mainly
+of person elements.  But entity elements (e.g. a company where a person
+works or a company that the person uses services) are included as well.
+A person element or an entity element MUST HAVE A UNIQUE id="nnn" attribute.
+Also they MUST have a name="" (the first name if person).
+Optionally they may have a url="". If a person they MUST have
+a surname="" attribute for the last name.  By reviewing data (below) the
+child elements for both person and entity can have specific data such
+as phone numbers, address information, etc. -->
+<coterie id="6">
+<person id="1" surname="Soucy" name="Tom">
+<emails>
+<email>tandmsoucy@verizon.net</email>
+</emails>
+<phones>
+<phone type="home" number="(781) 599-8014" />
+<phone type="mobile" number="(781) 608-6840" />
+</phones>
+<address city="Lynn" state="MA" zip="01904">
+<street>
+3 Harris Rd.
+</street>
+</address>
+<links>
+<link type="spouse" refId="3" />
+<link type="proprietor" refId="2" />
+</links>
+</person>
+<entity id="2" name="Collogistics">
+<emails>
+<email>support@collogistics.com</email>
+</emails>
+<phones>
+<phone type="home" number="(781) 599-8014" />
+<phone type="mobile" number="(781) 608-6840" />
+</phones>
+<address city="Lynn" state="MA" zip="01904">
+<street>
+3 Harris Rd.
+</street>
+</address>
+<links>
+<link type="employer" refId="1" />
+</links>
+</entity>
+<person id="3" surname="Soucy" name="Marsha">
+<emails>
+<email>tandmsoucy@verizon.net</email>
+</emails>
+<phones>
+<phone type="home" number="(781) 599-8014" />
+<phone type="mobile" number="(781) 883-9799" />
+</phones>
+<address city="Lynn" state="MA" zip="01904">
+<street>
+3 Harris Rd.
+</street>
+</address>
+<links>
+<link type="spouse" refId="1" />
+</links>
+</person>
+<person id="4" surname="Carmilia" name="Donna">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(603) 524-8264" />
+<!-- phone type="mobile" number="() " / -->
+</phones>
+<address city="Laconia" state="NH" zip="03246">
+<street>
+Salt Marsh Rd T Rfd 7 Box 24.
+</street>
+</address>
+</person>
+<person id="6" surname="Kenna" name="Abbie">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="() " / -->
+</phones>
+<address city="Fort Wayne" state="IN" zip="46807">
+<street>
+10211 Bashwood Pass
+</street>
+</address>
+</person>
+<person id="7" surname="Ricko" name="Al or Agnes">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(781) 599-9347" />
+<!-- phone type="mobile" number="() " / -->
+</phones>
+<address city="Lynn" state="MA" zip="01905">
+<street>
+86 Pennybrook Rd.
+</street>
+</address>
+</person>
+<person id="8" surname="Cooper" name="Al or Sue">
+<emails>
+<email>adcbiochem@aol.com</email>
+</emails>
+<phones>
+<phone type="home" number="(508) 756-2177" />
+<!-- phone type="mobile" number="() " / -->
+</phones>
+<address city="Auburn" state="MA" zip="01501">
+<street>
+4 Horseshoe Dr.
+</street>
+</address>
+</person>
+<person id="9" surname="Moss" name="Alaya Marie">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="() " / -->
+</phones>
+<address city="Fort Wayne" state="IN" zip="00000">
+<street>
+Abbie's daughter
+</street>
+</address>
+</person>
+<person id="10" surname="Charlot" name="Alison">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="() " / -->
+</phones>
+<address city="Somewheres" state="MA" zip="00000">
+<street>
+Belmont Hospital
+</street>
+</address>
+</person>
+<person id="11" surname="Serchuk" name="Anita">
+<emails>
+<email>asoucy@deloitte.com</email>
+<email>anitasoucy@hotmail.com</email>
+</emails>
+<phones>
+<phone type="home" number="(202) 462-1622" />
+<phone type="mobile" number="(202) 549-1419" />
+<phone type="work" number="(202) 378-5590" />
+</phones>
+<address city="Washington" state="DC" zip="20010">
+<street>
+1731 Park Road NW
+</street>
+</address>
+</person>
+<person id="12" surname="Balzotte" name="Anthony or Christine">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(781) 246-4495" />
+<!-- phone type="mobile" number="() " / -->
+</phones>
+<address city="Wakefield" state="MA" zip="01880">
+<street>
+17 Collins Rd.
+</street>
+</address>
+</person>
+<person id="13" surname="Labossiere" name="Armand">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(603) 887-2189" />
+<!-- phone type="mobile" number="() " / -->
+</phones>
+<address city="Sandown" state="NH" zip="03873">
+<street>
+31 Showell Pond Rd. Circle
+</street>
+</address>
+</person>
+<person id="14" surname="Suarez" name="Aura">
+<emails>
+<email>asuarez@law.harvard.edu</email>
+<email>wayneandaura@comcast.net</email>
+</emails>
+<phones>
+<phone type="home" number="(617) 469-4408" />
+<!-- phone type="mobile" number="() " / -->
+</phones>
+<address city="Roslindale" state="MA" zip="02131">
+<street>
+316 Poplar St.
+</street>
+</address>
+</person>
+<person id="15" surname="Weeks" name="Bernice">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(978) 368-1355" />
+<phone type="mobile" number="(508) 981-9900" />
+</phones>
+<address city="Lancaster" state="MA" zip="01523">
+<street>
+451 BlueHeron Pond Dr.
+</street>
+</address>
+</person>
+<person id="16" surname="Butler" name="Bob">
+<emails>
+<email>Rollgrove@gmail.com</email>
+</emails>
+<phones>
+<phone type="home" number="(781) 581-6107" />
+<phone type="mobile" number="(781) 241-2517" />
+</phones>
+<address city="Lynn" state="MA" zip="01905">
+<street>
+14 Temple Pl.
+</street>
+</address>
+</person>
+<person id="17" surname="Simmons" name="Bob or Bea">
+<emails>
+<email>lynnfieldms12@hotmail.com</email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="() " / -->
+</phones>
+<address city="Saugus" state="MA" zip="00000">
+<street>
+___________________
+</street>
+</address>
+</person>
+<person id="18" surname="Serchuk" name="Bruce">
+<emails>
+<email>bserchuk@nixonpeabody.com</email>
+</emails>
+<phones>
+<phone type="home" number="(202) 462-1622" />
+<phone type="mobile" number="(202) 669-2439" />
+<phone type="work" number="(202) 585-8267" />
+</phones>
+<address city="Washington" state="DC" zip="20010">
+<street>
+1731 Park Road NW
+</street>
+</address>
+</person>
+<person id="19" surname="Serchuk" name="Camille">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="() " / -->
+</phones>
+<address city="New Haven" state="CT" zip="00000">
+<street>
+_____________________
+</street>
+</address>
+</person>
+<person id="20" surname="Chadsey" name="Carolyn or Clint">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(781) 662-8119" />
+<phone type="work" number="(781) 756-7220" />
+</phones>
+<address city="Melrose" state="MA" zip="02176-1857">
+<street>
+12 Albion St.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="21" surname="Soucy" name="Chris">
+<emails>
+<email>chris_soucy@harvard.edu</email>
+<email>chris@chrissoucy.com</email>
+</emails>
+<phones>
+<phone type="home" number="(781) 592-8394" />
+<phone type="mobile" number="(617) 223-1727" />
+<phone type="work" number="(617) 495-0577" />
+</phones>
+<address city="Swampscott" state="MA" zip="01907">
+<street>
+27 Pine St.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="22" surname="LaBossiere" name="Daniel">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Rochester" state="NH" zip="03867">
+<street>
+41 Berry River Rd.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="23" surname="Soucy" name="Dave">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Ocoee" state="FL" zip="34761-8105">
+<street>
+6712 Lumberjack Lane
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="24" surname="Chadsey" name="Derek">
+<emails>
+<email>dchadsey@comcast.net</email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Warren" state="NH" zip="00000">
+<street>
+________________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="25" surname="Squillace" name="Dick or Elaine">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Schnectady" state="NY" zip="00000">
+<street>
+________________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="26" surname="Kenna" name="Doug or Leah">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<phone type="mobile" number="(260) 797-2100" />
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Fort Wayne" state="IN" zip="46807">
+<street>
+1126 Illsey Court
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="27" surname="Kenna" name="Edith">
+<emails>
+<email>ekenna@parkcenter.org</email>
+<email>ekenna@comcast.net</email>
+</emails>
+<phones>
+<phone type="home" number="(260) 432-8103" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(219) 482-9125 x 2137" / -->
+</phones>
+<address city="Fort Wayne" state="IN" zip="46804">
+<street>
+5011 Pinebrooke Dr.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="28" surname="Fisher" name="George or Lorrie">
+<emails>
+<email>George_fisher@cable.comcast.com</email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<phone type="mobile" number="(301) 606-8685" />
+<phone type="work" number="(301) 662-6822 x 1191" />
+</phones>
+<address city="Frederick" state="MD" zip="21701">
+<street>
+442 W. Patrick St.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="29" surname="Scott" name="Gwen">
+<emails>
+<email>gwen212@verizon.net</email>
+</emails>
+<phones>
+<phone type="home" number="(978) 658-4318" />
+<phone type="mobile" number="(978) 729-2747" />
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Wilmington" state="MA" zip="01887-1815">
+<street>
+18 Fay St.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="30" surname="Serchuk" name="Ivan">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="NY" state="NY" zip="00000">
+<street>
+________________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="31" surname="Soucy" name="Jon or Kerri">
+<emails>
+<email>jonathan.soucy@broadwayacrossamerica.com</email>
+<email>jonathansoucy@yahoo.com</email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<phone type="mobile" number="(781) 883-7775" />
+<phone type="work" number="(617) 880-2408" />
+</phones>
+<address city="Somerville" state="MA" zip="02144-2611">
+<street>
+69 Highland St. #3
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="32" surname="Dobbins" name="Tom">
+<emails>
+<email>mrd@verizon.net</email>
+</emails>
+<phones>
+<phone type="home" number="(781) 598-9457" />
+<phone type="mobile" number="(781) 589-9205" />
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="01905">
+<street>
+13 Mildred St.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="33" surname="LaBossiere" name="George">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="New Ipswitch" state="NH" zip="03071">
+<street>
+Fill Hill Dr RR 2 box 1805
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="34" surname="Soucy" name="Gerry">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(407) 298-3386" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Orlando" state="FL" zip="32818">
+<street>
+8425 AD Mims Rd.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="35" surname="Scott" name="Jeanne">
+<emails>
+<email>jlscott@gapac.com</email>
+</emails>
+<phones>
+<phone type="home" number="(770) 956-7786" />
+<phone type="mobile" number="(404) 652-6519" />
+<phone type="work" number="(800) 477-2737 x 6519" />
+</phones>
+<address city="Smyrna" state="GA" zip="30082">
+<street>
+2122 Adderbury Ln SW
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="36" surname="Conway" name="Jim or Elaine">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(978) 526-7446" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Manchester By The Sea" state="MA" zip="01944">
+<street>
+105 Beach St.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="37" surname="Hand" name="Jim or Nancy">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(941) 472-8941" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<phone type="work" number="(603) 744-8473" />
+</phones>
+<address city="Bridgewater" state="NH" zip="03222">
+<street>
+86 Wittemore Pt. Rd. N
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="38" surname="Thompson" name="Jim or Kathy">
+<emails>
+<email>jim.thompson@atsusa.com</email>
+<email>jctpro@hotmail.com</email>
+</emails>
+<phones>
+<phone type="home" number="(978) 683-0060" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="N. Andover" state="MA" zip="00000">
+<street>
+2 Pennbrook Circle
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="39" surname="Carmilia" name="John">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(617) 254-2496" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="00000">
+<street>
+________________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="40" surname="Bezpalko" name="Jozefa">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(781) 593-3842" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="01905-2111">
+<street>
+113 Waterhill St.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="41" surname="Aston" name="Julia or Kent">
+<emails>
+<email>julia.aston@comcast.net</email>
+<email>JAston@Lifespan.org</email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="00000">
+<street>
+________________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="42" surname="Fox" name="Karen or Bobby">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(978) 774-0745" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Danvers" state="MA" zip="00000">
+<street>
+9 Palmer Ave.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="43" surname="Ericson" name="Kristin">
+<emails>
+<email>kristin669@aol.com</email>
+</emails>
+<phones>
+<phone type="home" number="(617) 913-9271" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="01904">
+<street>
+333 Lynfield St.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="44" surname="Scott" name="Larry or Heidi">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Salem" state="MA" zip="00000">
+<street>
+3A Russell Drive
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="45" surname="Prentice" name="Laura or Kevin">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(919) 342-6434" />
+<phone type="mobile" number="(407) 654-9825" />
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Cary" state="NC" zip="27518">
+<street>
+111 Craven Hill Court
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="46" surname="Magliozzi" name="Lisa">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Acton" state="MA" zip="01720-5302">
+<street>
+1 Heritage Rd.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="47" surname="D'Agnese" name="Lou or Stephanie">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(781) 593-5093" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynnfield" state="MA" zip="01904-1540">
+<street>
+27 Canterbury Rd.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="48" surname="Johnson" name="Louise">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(508) 549-3641" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="00000">
+<street>
+________________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="49" surname="Squillace" name="Marie">
+<emails>
+<email>marie.squillace@hhs.gov</email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<phone type="mobile" number="(443) 454-0878" />
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Arnold" state="MD" zip="21012-2507">
+<street>
+185 Severn Way
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="50" surname="Falzone" name="Mark">
+<emails>
+<email>Rep.MarkFalzone@hou.state.ma.us</email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<phone type="work" number="(617) 722-2575" />
+</phones>
+<address city="Boston" state="MA" zip="02133-1054">
+<street>
+Rm 146 The State House
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="51" surname="Lederer" name="Marti">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(781) 593-7257" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Nahant" state="MA" zip="01908">
+<street>
+1 Hillcrest Ave.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="52" surname="Woods" name="Maurice">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(978) 774-8154" />
+<phone type="mobile" number="(508) 843-9435" />
+<phone type="work" number="(978) 887-2922" />
+</phones>
+<address city="Topsfield" state="MA" zip="01983">
+<street>
+239 Newburyport Trnpk. PO 163
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="53" surname="Gallo" name="Michelle">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<phone type="mobile" number="(781) 526-5768" />
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Belmont" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="54" surname="Dobbins" name="Nina">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="55" surname="Soucy" name="Norm">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(407) 790-2094" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Winter Garden" state="FL" zip="34787">
+<street>
+Quality HC - 12751 West Colonial Dr
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="56" surname="Giilligan" name="Paul or Linda">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(603) 471-2576" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Bedford" state="NH" zip="03110">
+<street>
+20 Weymouth Dr.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="57" surname="Tavares" name="Peter or Lydia">
+<emails>
+<email>peteandlyd@verizon.net</email>
+</emails>
+<phones>
+<phone type="home" number="(703) 866-0075" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Springfield" state="VA" zip="22152">
+<street>
+6618 Hunstman Blvd.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="58" surname="Satlin" name="Shelly or Phoebe">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="59" surname="Meuse" name="Ron or Elaine">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(781) 231-0981" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Saugus" state="MA" zip="01906">
+<street>
+6 Alvah St.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="60" surname="Holt" name="Rose">
+<emails>
+<email>mamarosie119@aol.com</email>
+</emails>
+<phones>
+<phone type="home" number="(617) 389-5238" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Everett" state="MA" zip="02149">
+<street>
+6 Wilbur St. A
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="61" surname="St Clair" name="Bill or Sandy">
+<emails>
+<email>stcant@comcast.net</email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="62" surname="Squillace" name="Scott">
+<emails>
+<email>scott@squillace-law.com</email>
+</emails>
+<phones>
+<phone type="home" number="(617) 241-0069" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<phone type="work" number="(617) 716-0300" />
+</phones>
+<address city="Charlstown" state="MA" zip="02129">
+<street>
+33 Washington St. #1
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="63" surname="Provenzano" name="Stephan">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(603) 594-5951" />
+<phone type="mobile" number="(978) 395-1784" />
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="64" surname="Squillace" name="Steve or Joy">
+<emails>
+<email>jynstv@snet.net</email>
+</emails>
+<phones>
+<phone type="home" number="(860) 763-2956" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Somers" state="CT" zip="06071">
+<street>
+______________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="65" surname="Belyea" name="Steve">
+<emails>
+<email>shb74th@aol.com</email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="66" surname="Labossiere" name="Steven">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(603) 924-9145" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Peterborough" state="NH" zip="03458">
+<street>
+______________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="67" surname="Frick" name="Brian or Susan">
+<emails>
+<email>susan-frick@hotmail.com</email>
+<email>snoozescott@hotmail.com</email>
+</emails>
+<phones>
+<phone type="home" number="(617) 924-0822" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Beverly" state="MA" zip="01915">
+<street>
+24 Corning St.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="68" surname="Gagne" name="Teresa T">
+<emails>
+<email>therese@tampabay.rr.com</email>
+</emails>
+<phones>
+<phone type="home" number="(813) 917-3875" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Tampa" state="FL" zip="33625">
+<street>
+12510 Cardiff Dr.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="69" surname="Dobbins" name="Tom or Fern">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(781) 599-7072" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="01905">
+<street>
+69 Mall St.
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="70" surname="Serchuk" name="Vance">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="71" surname="Lozzi" name="Wayne">
+<emails>
+<email>waynelozzi@lynncitycouncil.net</email>
+<email>wlozzi@hotmail.com</email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</person>
+<!-- START PERSON -->
+<person id="72" surname="Langley" name="Wayne">
+<emails>
+<email>waynester02131@yahoo.com</email>
+<email>wayneandaura@comcast.net</email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<phone type="mobile" number="(617) 510-1408" />
+<phone type="work" number="(617) 878-7484" />
+</phones>
+<address city="Roslindale" state="MA" zip="02131">
+<street>
+316 Poplar St.
+</street>
+</address>
+</person>
+<!-- START ENTITY -->
+<entity id="73" name="Apple">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(978) 531-2802" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Peabody" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="74" name="Atlanticare">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 581-9200" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="75" name="Borders Books">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(978) 538-3003" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Peabody" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="76" name="Boston Globe">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 595-3078 #2" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<phone type="service" number="(800) 622-6631" />
+<phone type="
+
+
+" number="(___) ___-____" />
+</phones>
+<address city="Boston" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="77" name="Century Tire">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 593-5493" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="78" name="Essex Explorers">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(978) 740-0444" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="79" name="Fast Lane">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(877) 627-7745" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="80" name="Hunt Photo">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 662-8822" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Melrose" state="MA" zip="_____">
+<street>
+100 Main St.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="81" name="Ira Subaru">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(978) 739-8850" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<phone type="work" number="(978) 739-8874" />
+</phones>
+<address city="Danvers" state="MA" zip="_____">
+<street>
+Andover St.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="82" name="JoAnne Fabric">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 231-3434" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Saugus" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="83" name="Kowloons">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 233-0077" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Saugus" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="84" name="Linden Tree Coffee House">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 246-2836" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Wakefield" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="85" name="Lynn City Hall">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 598-4000" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="86" name="Lynn DPW">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 477-7098" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="87" name="Lynn Fire Dept.">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 593-1234" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="88" name="Lynn Item">
+<emails>
+<email>graphics@itemlive.com</email>
+</emails>
+<phones>
+<phone type="main" number="(781) 593-7700" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="_____">
+<street>
+Exchange St.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="89" name="Lynn Library">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 595-0567" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="_____">
+<street>
+N. Common St.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="90" name="Lynn Museum">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 592-2465" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="91" name="Lynn Police">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 595-2000" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="92" name="Lynn Shelter Assoc.">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 581-0739" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="_____">
+<street>
+Liberty St.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="93" name="Maestranzi Bros.">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(978) 922-3509" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Beverly" state="MA" zip="_____">
+<street>
+58 Dunham Rd.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="94" name="Me and Thee">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 631-8987" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Marblehead" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="95" name="Ms Carpet Clean">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 233-5800" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="96" name="Prince Pizza">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 233-9950" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Saugus" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="97" name="Salem Paper">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(978) 922-1234" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Salem" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="98" name="Saugus Bank">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 231-3800" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Saugus" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="99" name="St. John's Church">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 233-1242" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Saugus" state="MA" zip="_____">
+<street>
+Prospect St.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="100" name="Swampscott Library">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 596-8867" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Swampscott" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="101" name="Tarpey Insurance Co.">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(800) 640-6715" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Wakefield" state="MA" zip="_____">
+<street>
+Water St.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="102" name="Tri City Taxi">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(978) 535-4700" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Peabody" state="MA" zip="_____">
+<street>
+55 Walnut
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="103" name="UPS">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Peabody" state="MA" zip="_____">
+<street>
+300 Andover St.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="104" name="Wakefield Subary">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 246-3331" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Wakefield" state="MA" zip="_____">
+<street>
+Main St.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="105" name="Walnut Place Cleaners">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(781) 233-0522" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Saugus" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="106" name="Minos Subs">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="_____">
+<street>
+Lynn St.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="107" name="Superior Subs">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Lynn" state="MA" zip="_____">
+<street>
+Lynnfield St.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="108" name="PowerAdvocate">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(857) 453-5656" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Boston" state="MA" zip="02111">
+<street>
+179 Lincoln St.
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="109" name="McGinnis Assoc.">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="Andover" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START ENTITY -->
+<entity id="998" name="Zeroed_NonEntity">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="main" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</entity>
+<!-- START PERSON -->
+<person id="999" surname="Zero" name="Nobody">
+<emails>
+<email></email>
+</emails>
+<phones>
+<phone type="home" number="(___) ___-____" />
+<!-- phone type="mobile" number="(___) ___-____" / -->
+<!-- phone type="work" number="(___) ___-____" / -->
+</phones>
+<address city="__________" state="MA" zip="_____">
+<street>
+______________________
+</street>
+</address>
+</person>
+</coterie>

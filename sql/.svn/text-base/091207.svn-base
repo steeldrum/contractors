@@ -1,0 +1,269 @@
+http://localhost/MAMP/
+
+MySQL
+
+The MySQL Database can be administrated with phpMyAdmin.
+
+To connect to the MySQL Server from your own scripts use the following connection parameters:
+Host 	localhost
+Port 	3306
+User 	root
+Password 	root
+Example:
+
+$link = mysql_connect('localhost', 'root', 'root');
+
+or you can connect using an UNIX Socket:
+Socket 	/Applications/MAMP/tmp/mysql/mysql.sock
+User 	root
+Password 	root
+
+Example:
+
+$link = mysql_connect(
+  ':/Applications/MAMP/tmp/mysql/mysql.sock',
+  'root',
+  'root'
+);
+
+
+    * Server: Localhost via UNIX socket
+    * Server version: 5.1.37
+    * Protocol version: 10
+    * User: root@localhost
+    * MySQL charset: UTF-8 Unicode (utf8)
+
+        * Apache/2.0.63 (Unix) PHP/5.2.11 DAV/2
+    * MySQL client version: 5.1.37
+    * PHP extension: mysql
+
+    Version information: 3.2.0.1
+    
+    create COLLORG
+    
+ CREATE TABLE `COLLORG`.`options` (
+`id` SMALLINT NOT NULL AUTO_INCREMENT ,
+`account` SMALLINT NOT NULL ,
+`name` VARCHAR( 32 ) NOT NULL ,                                        
+`description` VARCHAR( 256 ) NOT NULL ,
+`isInactive` TINYINT NULL ,        
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM ;
+                               
+INSERT INTO `COLLORG`.`options` (`id`, `account`, `name`, `description`, `isInactive`) VALUES ('1', '0', 'basic', 'basic', NULL), ('2', '0', 'standard', 'standard', NULL), ('3', '0', 'premium', 'premium', NULL);
+
+//ALTER TABLE `options` ADD `isInactive` TINYINT NULL 
+
+ALTER TABLE `options` CHANGE `description` `description` VARCHAR( 256 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL; 
+
+//ALTER TABLE `options` CHANGE `id` `id` SMALLINT( 6 ) NOT NULL AUTO_INCREMENT 
+
+CREATE TABLE `COLLORG`.`types` (
+`id` SMALLINT NOT NULL AUTO_INCREMENT ,
+`account` SMALLINT NOT NULL ,
+`name` VARCHAR( 32 ) NOT NULL ,
+`description` VARCHAR( 256 ) NOT NULL ,
+`isInactive` TINYINT NULL ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM ;
+
+//ALTER TABLE `types` DROP INDEX `id` 
+
+INSERT INTO `COLLORG`.`types` (
+`id` ,
+`account` ,
+`name` ,
+`description`,
+`isInactive`
+)
+VALUES (
+'1', '0', 'bathroom', '', NULL
+);
+
+INSERT INTO `COLLORG`.`types` (
+`id` ,
+`account` ,
+`name` ,
+`description`,
+`isInactive`
+)
+VALUES (
+NULL , '0', 'furnace', '', NULL
+);
+
+INSERT INTO `COLLORG`.`types` (
+`id` ,
+`account` ,
+`name` ,
+`description`,
+`isInactive`
+)
+VALUES (
+NULL , '0', 'kitchen', '', NULL
+);
+
+CREATE TABLE `COLLORG`.`customers` (
+`id` SMALLINT NOT NULL AUTO_INCREMENT ,
+`account` SMALLINT NOT NULL ,
+`last` VARCHAR( 32 ) NOT NULL ,
+`first` VARCHAR( 32 ) NOT NULL ,
+`isInactive` TINYINT NULL ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM ;
+
+INSERT INTO `COLLORG`.`customers` (
+`id` ,
+`account` ,
+`last` ,
+`first`,
+`isInactive`
+)
+VALUES (
+'1', '0', 'soucy', 'tom', NULL
+), (
+NULL , '0', 'dobbins', 'tom', NULL
+);
+
+CREATE TABLE `COLLORG`.`suppliers` (
+`id` SMALLINT NOT NULL AUTO_INCREMENT ,
+`name` VARCHAR( 32 ) NOT NULL ,
+`phone` VARCHAR( 12 ) NULL ,
+`url` VARCHAR( 256 ) NULL ,
+`contactLast` VARCHAR( 32 ) NULL ,
+`contactFirst` VARCHAR( 32 ) NULL ,
+`isInactive` TINYINT NULL ,
+`dateCreated` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`dateModified` TIMESTAMP NULL DEFAULT NULL ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM ;
+
+INSERT INTO `COLLORG`.`suppliers` (
+`id` ,
+`name` ,
+`phone` ,
+`url` ,
+`contactLast` ,
+`contactFirst` ,
+`isInactive`,
+`dateCreated` ,
+`dateModified`
+)
+VALUES (
+'1', 'warehouse', NULL , NULL , NULL , NULL , NULL,
+CURRENT_TIMESTAMP , NOW( )
+), (
+'2', 'The Home Depot', NULL , NULL , NULL , NULL , NULL,
+CURRENT_TIMESTAMP , NOW( )
+);
+
+
+CREATE TABLE `COLLORG`.`parts` (
+`id` SMALLINT NOT NULL AUTO_INCREMENT ,
+`account` SMALLINT NOT NULL ,
+`name` VARCHAR( 32 ) NOT NULL ,
+`supplierId` SMALLINT NOT NULL ,
+`sku` VARCHAR( 32 ) NULL ,
+`attributes` VARCHAR( 64 ) NULL ,
+`description` VARCHAR( 256 ) NULL ,
+`cost` FLOAT NOT NULL ,
+`isInactive` TINYINT NULL ,
+`dateCreated` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`dateModified` TIMESTAMP NULL ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM ;
+
+INSERT INTO `COLLORG`.`parts` (
+`id` ,
+`account` ,
+`name` ,
+`supplierId` ,
+`sku` ,
+`attributes` ,
+`description` ,
+`cost` ,
+`isInactive` ,
+`dateCreated` ,
+`dateModified`
+)
+VALUES (
+NULL , '0', 'DHW tank', '2', 'DHW109', 'white', '40 gal gas', '109', NULL,
+CURRENT_TIMESTAMP , NOW( )
+), (
+NULL , '0', 'boiler', '2', 'B110', 'black', '85% efficient', '2010', NULL,
+CURRENT_TIMESTAMP , NOW( )
+); 
+
+CREATE TABLE `COLLORG`.`jobs` (
+`id` SMALLINT NOT NULL AUTO_INCREMENT ,
+`account` SMALLINT NOT NULL ,
+`typeId` SMALLINT NOT NULL ,
+`customerId` SMALLINT NOT NULL ,
+`description` VARCHAR( 64 ) NOT NULL ,
+`isInactive` TINYINT NULL ,
+`dateCreated` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+`dateModified` TIMESTAMP NOT NULL ,
+PRIMARY KEY ( `id` )
+) ENGINE = MYISAM ;
+
+CREATE TABLE `COLLORG`.`jobOptions` (
+`jobId` SMALLINT NOT NULL ,
+`optionId` SMALLINT NOT NULL ,
+`partId` SMALLINT NOT NULL ,
+`sku` VARCHAR( 32 ) NOT NULL ,
+`quantity` FLOAT NOT NULL ,
+`discount` FLOAT NULL ,
+`surcharge` FLOAT NULL
+) ENGINE = MYISAM ;
+
+INSERT INTO `COLLORG`.`jobs` (
+`id` ,
+`account` ,
+`typeId` ,
+`customerId` ,
+`description` ,
+`isInactive` ,
+`dateCreated` ,
+`dateModified`
+)
+VALUES (
+NULL , '0', '2', '1', 'replace old boiler and hot water heater', NULL,
+CURRENT_TIMESTAMP , '0000-00-00 00:00:00'
+);
+
+ALTER TABLE `jobOptions` CHANGE `sku` `sku` VARCHAR( 32 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL; 
+
+//ALTER TABLE `jobOptions` CHANGE `surcharge` `surcharge` FLOAT NULL 
+
+INSERT INTO `COLLORG`.`jobOptions` (
+`jobId` ,
+`optionId` ,
+`partId` ,
+`sku` ,
+`quantity` ,
+`discount` ,
+`surcharge`
+)
+VALUES (
+'1', '1', '6', NULL , '6', NULL , NULL
+);
+
+//NONO
+INSERT INTO `COLLORG`.`jobOptions` (
+`jobId` ,
+`optionId` ,
+`partId` ,
+`sku` ,
+`quantity` ,
+`discount` ,
+`surcharge`
+)
+VALUES (
+'3', '3', '8', NULL , NULL , NULL , NULL
+), (
+'3', '3', '6', NULL , '28', '.20', NULL
+);
+
+account setup use this
+INSERT INTO `COLLORG`.`options` (`id`, `account`, `name`, `description`, `isInactive`) VALUES (NULL, '6', 'basic', 'basic', NULL), (NULL, '6', 'standard', 'standard', NULL), (NULL, '6', 'premium', 'premium', NULL);
+
+

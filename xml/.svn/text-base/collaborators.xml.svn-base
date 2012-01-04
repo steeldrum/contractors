@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!-- collaborators.xml
+tjs 091211
+
+file version 1.02
+
+release version 1.05
+-->
+<collaborators>
+<collaborator id="0">
+<last>
+demo
+</last>
+<first>
+demo
+</first>
+<email>
+demo@collogistics.com
+</email>
+<password>
+demo123
+</password>
+</collaborator>
+<collaborator id="1">
+<last>
+butler
+</last>
+<first>
+bob
+</first>
+<email>
+Rollgrove@gmail.com
+</email>
+<password>
+bob123
+</password>
+</collaborator>
+<collaborator id="2">
+<last>
+dobbins
+</last>
+<first>
+tom
+</first>
+<email>
+mrd@verizon.net
+</email>
+<password>
+tom123
+</password>
+</collaborator>
+<collaborator id="3">
+<last>
+soucy
+</last>
+<first>
+tom
+</first>
+<email>
+tandmsoucy@verizon.net
+</email>
+<password>
+tom123
+</password>
+</collaborator>
+<collaborator id="4">
+<last>
+soucy
+</last>
+<first>
+chris
+</first>
+<email>
+chris@chrissoucy.com
+</email>
+<password>
+chris123
+</password>
+</collaborator>
+<collaborator id="5">
+<last>
+soucy
+</last>
+<first>
+jon
+</first>
+<email>
+jonathansoucy@yahoo.com
+</email>
+<password>
+jon123
+</password>
+</collaborator>
+<collaborator id="6">
+<last>
+tester
+</last>
+<first>
+tessie
+</first>
+<email>
+test@collogistics.com
+</email>
+<password>
+tessie123
+</password>
+</collaborator>
+</collaborators>
